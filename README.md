@@ -4,7 +4,16 @@ PyProject Starter is a Python project starter kit with docker services and strea
 This starter builds on top of Timothy Helton's Pyproject Generator: 
 https://github.com/TimothyHelton/pyproject_generator
 
-## PyProject Starter Structure
+## Getting Started With the New Project
+ is a fully functioning Python package that may be installed using
+`pip`.
+Docker Images are built into the package and a Makefile provides an easy to call
+repetitive commands.
+
+### PyProject Starter Structure
+- `app`: Applications directory where new apps can be added
+  - `streamlit`: Streamlit service with sample pages (missing test atm)
+    - `subpages`: Sample subpages for a Streamlit app
 - `docker`: Docker directory
   - `mongo_init`: Folder with mongo init related files
   - `Dockerfile`: Dockerfiles for building Docker container images
@@ -12,36 +21,9 @@ https://github.com/TimothyHelton/pyproject_generator
   networks, and volumes for a multi-container application
 - `docs`: Folder used by sphinx for auto-documentation
 - `pyproject_starter`: Project main script directory - additional apps are added here
-  - `app`: Applications directory where new apps can be added
-    - `streamlit`: Streamlit service with sample pages (missing test atm)
-      - `subpages`: Sample subpages for a Streamlit app
   - `configs`: Project configuration files
   - `test`: Project unit tests
 - `scripts`: Folder with setup related scripts
-
-## Setting Up New Project
-1. From current project root directory, run:
-    - `make create-project`
-      - `Enter the old project name: pyproject_starter`
-      - `Enter the new project name: new_project`
-1. Current project directories and files are created in the new project directory
-    - `new_project/`
-1. The new project is created 1-level up from the current project root directory
-    - if current project directory is `projects/pyproject_starter` 
-      then the new project is created at `projects/new_project`
-1. To add to git:
-   - `git init`
-   - `git add <new_project_files_and_directories>`
-   - `git commit -m "first commit or any comments"`
-   - `git branch -M main`
-   - `git remote add origin https://github.com/<user_or_organization>/<project>.git`
-   - `git push -u origin main`
-
-## Getting Started With the New Project
- is a fully functioning Python package that may be installed using
-`pip`.
-Docker Images are built into the package and a Makefile provides an easy to call
-repetitive commands.
 
 ### Makefile Code Completion
 It's handy to have code completion when calling targets from the Makefile.
@@ -62,6 +44,24 @@ git clone <enter_path_to_repo>.git
 A directory called `pyproject_starter` will be created where the 
 command was executed. This `pyproject_starter` directory will be 
 referred to as the "package root directory" throughout the project.
+
+### Setting Up New Project
+1. From current project root directory, run:
+    - `make create-project`
+      - `Enter the old project name: pyproject_starter`
+      - `Enter the new project name: new_project`
+1. Current project directories and files are created in the new project directory
+    - `new_project/`
+1. The new project is created 1-level up from the current project root directory
+    - if current project directory is `projects/pyproject_starter` 
+      then the new project is created at `projects/new_project`
+1. To add to git:
+   - `git init`
+   - `git add <new_project_files_and_directories>`
+   - `git commit -m "first commit or any comments"`
+   - `git branch -M main`
+   - `git remote add origin https://github.com/<user_or_organization>/<project>.git`
+   - `git push -u origin main`
 
 ### Initialize the Project
 Some functionality of the package is created locally.
