@@ -1,0 +1,91 @@
+# Cached files
+cache/
+
+# C++ files
+build/
+/cmake-build-debug/
+cpp_tests/lib/
+
+# Compiled source
+*.com
+dist/
+*.egg-info/
+*.class
+*.dll
+*.exe
+*.o
+*.pdf
+*.pyc
+*.so*
+
+# Docker files
+docker/.env
+docker/secrets/
+
+# Environments
+venv/*
+
+# Ipython files
+.ipynb_checkpoints
+
+# Logs and databases
+*.log
+logs/
+*make.bat
+runs/
+*.sql
+*.sqlite
+
+# MLFlow experiments
+ai_logs/
+mlruns/
+# OS generated files
+.DS_Store
+.DS_store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Profile files
+*.coverage
+htmlcov/
+*.profile
+
+# Project files
+*wheels
+
+# PyCharm files
+.idea/*
+pyproject_starter/.idea/*
+
+# pytest files
+.cache/*
+.pytest_cache
+pytest
+
+# Raw data
+data/*
+
+# Sphinx files
+docs/_build/
+docs/_static/
+docs/_templates/
+docs/Makefile
+
+# Submodules
+submodules/*
+
+# User specific files
+usr_vars

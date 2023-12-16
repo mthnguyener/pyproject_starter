@@ -1,0 +1,8 @@
+*.egg-info
+.idea
+.pytest_cache
+data
+.pytest
+venv
+wheels
+

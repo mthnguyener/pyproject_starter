@@ -1,0 +1,10 @@
+*/*.egg-info/
+*/data/
+*/docker/
+*/docs/*/
+*/htmlcov/
+*/.ipynb_checkpoints/
+*/notebooks/
+*/profiles/
+*/wheels/
+
