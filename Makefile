@@ -311,10 +311,7 @@ test: docker-up format-style
 		sh -c 'echo "Installing packages for testing....." \
 		&& pip install -r requirements-dev.txt > logs/tests/$(timestamp)_log.txt'
 	@$(DOCKER_CMD) container exec $(CONTAINER_PREFIX)_python \
-		sh -c 'py.test $(PROJECT) | tee -a logs/tests/$(timestamp)_log.txt \
-		&& adduser --system --no-create-home --uid $(USER_ID) --group $(USER) &> /dev/null \
-		&& chown -R $(USER):$(USER) htmlcov \
-		&& chown -R $(USER):$(USER) logs'
+		sh -c 'py.test $(PROJECT) | tee -a logs/tests/$(timestamp)_log.txt'
 	@$(DOCKER_CMD) container exec $(CONTAINER_PREFIX)_python \
 		sh -c 'echo "Removing packages that was used for testing....." \
 		&& yes | pip uninstall -r requirements-dev.txt >> logs/tests/$(timestamp)_log.txt'
