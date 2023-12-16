@@ -12,6 +12,6 @@ COPY ../app/__init__.py .
 
 COPY ../app/__init__.py ./app
 
-ENV PYTHONPATH=/usr/src/pyproject_starter
+ENV PYTHONPATH=/usr/src/pyproject_starter/app
 
 CMD ["streamlit", "run", "app/streamlit/app.py"]
