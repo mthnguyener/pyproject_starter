@@ -329,9 +329,8 @@ class ComposeConfiguration:
             'restart':
             'always',
             'volumes': [
-                f'../{self._package}/app/streamlit:'
-                f'/usr/src/pyproject_starter/'
-                f'pyproject_starter/app/streamlit',
+                f'../app/streamlit:'
+                f'/usr/src/pyproject_starter/app/streamlit',
             ],
         }
 

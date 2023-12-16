@@ -80,6 +80,6 @@ services:
     - $PORT_STREAMLIT:8501
     restart: always
     volumes:
-    - ../pyproject_starter/app/streamlit:/usr/src/pyproject_starter/pyproject_starter/app/streamlit
+    - ../app/streamlit:/usr/src/pyproject_starter/app/streamlit
 volumes:
   pyproject_starter-secret: null
