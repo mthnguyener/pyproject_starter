@@ -5,9 +5,9 @@
 """
 import streamlit as st
 
-from app.streamlit.subpages.page_1 \
+from applications.streamlit.subpages.page_1 \
     import page_1
-from app.streamlit.subpages.page_2 \
+from applications.streamlit.subpages.page_2 \
     import page_2
 
 
@@ -27,7 +27,7 @@ def main():
 
 def home_page():
     st.subheader("Welcome to the Home Page")
-    st.write("This is the home page of the app.")
+    st.write("This is the home page of the applications.")
 
 
 if __name__ == "__main__":

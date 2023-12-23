@@ -1,17 +1,18 @@
-FROM python:3.10
+FROM python:3.11
 
-WORKDIR /usr/src/pyproject_starter/app/streamlit
+WORKDIR /usr/src/pyproject_starter/applications/streamlit
 
-COPY ../app/streamlit .
+COPY ../applications/streamlit .
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip \
+	&& pip install \
+        -r requirements.txt \
+	&& apt update -y \
+	# && apt -y upgrade \
+	&& apt install -y\
+		fonts-humor-sans \
+        vim
 
-WORKDIR /usr/src/pyproject_starter
+ENV PYTHONPATH=/usr/src/pyproject_starter
 
-COPY ../app/__init__.py .
-
-COPY ../app/__init__.py ./app
-
-ENV PYTHONPATH=/usr/src/pyproject_starter/app
-
-CMD ["streamlit", "run", "app/streamlit/app.py"]
+CMD ["streamlit", "run", "app.py"]

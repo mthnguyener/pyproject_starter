@@ -93,7 +93,7 @@ setup(
     ],
     keywords='EnterKeywordsHere',
     packages=find_packages(exclude=[
-        'app*',
+        'applications*',
         'data',
         'docker',
         'docs',
