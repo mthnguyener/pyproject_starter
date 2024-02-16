@@ -2,25 +2,25 @@
 # update_project_name.sh
 
 if [ "$#" -ne 2 ]; then
-    echo "Usage: $0 <old_name> <new_name>"
+    echo "Usage: $0 <OLD_PROJECT> <NEW_PROJECT>"
     exit 1
 fi
 
-old_name="$1"
-new_name="$2"
+OLD_PROJECT="$1"
+NEW_PROJECT="$2"
 
 # Print the current working directory
 echo "Current working directory: $(pwd)"
 
 # Copy the template project to a new directory
-cp -r "../$old_name" "../$new_name"
+cp -r "../OLD_PROJECT" "../NEW_PROJECT"
 
 # Print the current working directory where new project is located
-echo "Project built in: $(pwd)/$new_name"
+echo "Project built in: $(pwd)/NEW_PROJECT"
 
 # Update file contents
-cd ../$new_name
-rm -rf $old_name.egg-info
+cd ../NEW_PROJECT
+rm -rf OLD_PROJECT.egg-info
 rm -rf %%
 rm -rf cache
 rm -rf docker/secrets
@@ -31,10 +31,10 @@ rm -rf .idea
 rm -rf venv
 rm -rf wheels
 rm usr_vars
-mv $old_name $new_name
-find . -type f -exec sed -i "s/$old_name/$new_name/g" {} +
+mv OLD_PROJECT NEW_PROJECT
+find . -type f -exec sed -i "s/OLD_PROJECT/NEW_PROJECT/g" {} +
 
 # Removing git directory
 rm -rf .git
 
-echo "New project '$new_name' created successfully!"
+echo "New project 'NEW_PROJECT' created successfully!"

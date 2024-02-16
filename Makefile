@@ -41,9 +41,8 @@ cpp-build:
 		&& cp lib/*.so* ../lib
 
 create-project:
-	@read -p "Enter the old project name: " old_name; \
-	read -p "Enter the new project name: " new_name; \
-	./scripts/update_project_name.sh $$old_name $$new_name
+	@read -p "Enter the new project name: " NEW_PROJECT; \
+	./scripts/update_project_name.sh $(PROJECT) $$NEW_PROJECT
 
 deploy: docker-up
 	@$(DOCKER_CMD) container exec $(CONTAINER_PREFIX)_python pip3 wheel --wheel-dir=wheels .[all]
