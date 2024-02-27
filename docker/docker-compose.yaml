@@ -1,12 +1,12 @@
 networks:
   pyproject_starter-network:
-    name: ${COMPOSE_PROJECT_NAME:-default}-pyproject_starter-network
+    name: ${USER_NAME:-default}-pyproject_starter-network
 secrets:
   package:
     file: secrets/package.txt
 services:
-  nginx:
-    container_name: ${COMPOSE_PROJECT_NAME:-default}_pyproject_starter_nginx
+  pyproject_starter_nginx:
+    container_name: ${USER_NAME:-default}_pyproject_starter_nginx
     env_file: .env
     environment:
       PORT_NGINX: ${PORT_NGINX}
@@ -18,14 +18,14 @@ services:
     restart: always
     volumes:
     - ../docs/_build/html:/usr/share/nginx/html:ro
-  python:
+  pyproject_starter_python:
     build:
       context: ..
       dockerfile: docker/pytorch.Dockerfile
       shm_size: 1g
     cap_add:
     - SYS_PTRACE
-    container_name: ${COMPOSE_PROJECT_NAME:-default}_pyproject_starter_python
+    container_name: ${USER_NAME:-default}_pyproject_starter_python
     deploy:
       resources:
         reservations:
@@ -65,11 +65,11 @@ services:
     - ..:/usr/src/pyproject_starter
     - ${DATA_DIR}:/usr/src/pyproject_starter/data
     - pyproject_starter-secret:/usr/src/pyproject_starter/docker/secrets
-  streamlit:
+  pyproject_starter_streamlit:
     build:
       context: ..
       dockerfile: docker/streamlit.Dockerfile
-    container_name: ${COMPOSE_PROJECT_NAME:-default}_pyproject_starter_streamlit
+    container_name: ${USER_NAME:-default}_pyproject_starter_streamlit
     env_file: .env
     environment:
       PORT_STREAMLIT: ${PORT_STREAMLIT}

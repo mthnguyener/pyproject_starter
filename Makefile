@@ -15,7 +15,7 @@ else
 	BROWSER=open
 endif
 
-CONTAINER_PREFIX:=$(COMPOSE_PROJECT_NAME)_$(PROJECT)
+CONTAINER_PREFIX:=$(USER_NAME)_$(PROJECT)
 DOCKER_CMD=docker
 DOCKER_COMPOSE_CMD=docker compose
 DOCKER_IMAGE=$(shell head -n 1 docker/python.Dockerfile | cut -d ' ' -f 2)
@@ -39,10 +39,6 @@ cpp-build:
 		&& cmake .. \
 		&& cmake --build . \
 		&& cp lib/*.so* ../lib
-
-create-project:
-	@read -p "Enter the new project name: " NEW_PROJECT; \
-	./scripts/update_project_name.sh $(PROJECT) $$NEW_PROJECT
 
 deploy: docker-up
 	@$(DOCKER_CMD) container exec $(CONTAINER_PREFIX)_python pip3 wheel --wheel-dir=wheels .[all]
@@ -190,6 +186,10 @@ mlflow-stop-server: docker-up
 mongo-create-user:
 	@sleep 2
 	@$(DOCKER_CMD) container exec $(CONTAINER_PREFIX)_mongo /docker-entrypoint-initdb.d/create_user.sh
+
+new-project:
+	@read -p "Enter the new project name: " NEW_PROJECT; \
+	./scripts/update_project_name.sh $(PROJECT) $$NEW_PROJECT
 
 notebook: docker-up notebook-server
 	@printf "%s\n" \

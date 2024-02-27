@@ -11,7 +11,7 @@ Docker Images are built into the package and a Makefile provides an easy to call
 repetitive commands.
 
 ### PyProject Starter Structure
-- `app`: Applications directory where new apps can be added
+- `applications`: Applications directory where new apps can be added
   - `streamlit`: Streamlit service with sample pages (missing test atm)
     - `subpages`: Sample subpages for a Streamlit app
 - `docker`: Docker directory
@@ -24,6 +24,14 @@ repetitive commands.
   - `configs`: Project configuration files
   - `test`: Project unit tests
 - `scripts`: Folder with setup related scripts
+
+### Docker Naming Convention
+Service: <project_name>_<service>
+    - `pyproject_starter_python`
+Container: <user_name>_<project_name>_<service>
+    - `mthnguyener_pyproject_starter_python`
+Image: <project_name>_<service>
+    - `pyproject_starter_python`
 
 ### Makefile Code Completion
 It's handy to have code completion when calling targets from the Makefile.
@@ -47,15 +55,14 @@ referred to as the "package root directory" throughout the project.
 
 ### Setting Up New Project
 1. From current project root directory, run:
-    - `make create-project`
-      - `Enter the old project name: pyproject_starter`
-      - `Enter the new project name: new_project`
-1. Current project directories and files are created in the new project directory
+    - `make new-project`
+      - `Enter the new project name: <project_name>`
+2. Current project directories and files are created in the new project directory
     - `new_project/`
-1. The new project is created 1-level up from the current project root directory
+3. The new project is created 1-level up from the current project root directory
     - if current project directory is `projects/pyproject_starter` 
       then the new project is created at `projects/new_project`
-1. To add to git:
+4. To add to git:
    - `git init`
    - `git add <new_project_files_and_directories>`
    - `git commit -m "first commit or any comments"`

@@ -21,7 +21,8 @@ done
 # Create usr_vars configuration file
 INITIAL_PORT=$(( (UID - 500) * 50 + 10000 ))
 printf "%s\n" \
-    "COMPOSE_PROJECT_NAME=${USER}" \
+    "USER_NAME=${USER}" \
+    "PROJECT_NAME=pyproject_starter" \
     "" \
     "# Data Directory" \
     "DATA_DIR=/mnt/data" \
