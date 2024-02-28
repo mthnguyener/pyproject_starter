@@ -12,6 +12,8 @@ RUN pip install --upgrade pip \
 	# && apt -y upgrade \
 	&& apt install -y\
 		fonts-humor-sans \
+    && pip install -r \
+        requirements.txt \
 	# && conda update -y conda \
 	# && while read requirement; do conda install --yes ${requirement}; done < requirements_pytorch.txt \
 	# Clean up

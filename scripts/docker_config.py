@@ -17,6 +17,7 @@ logger = logging.getLogger('package')
 
 PROJECT_NAME = os.getenv('PROJECT_NAME')
 
+
 class ComposeService(Enum):
     """Implemented Docker Compose services."""
     LATEX = f'{PROJECT_NAME}_latex'
