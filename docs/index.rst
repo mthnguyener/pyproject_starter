@@ -10,7 +10,7 @@ Welcome to pyproject_starter's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-
+   package
 
 Indices and tables
 ==================

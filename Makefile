@@ -145,7 +145,7 @@ getting-started: secret-templates docs-init
 	@mkdir -p cache \
 	    && mkdir -p data \
 		&& mkdir -p htmlcov \
-		%% mkdir -p logs/tests \
+		&& mkdir -p logs/tests \
 		&& mkdir -p notebooks \
 		&& mkdir -p profiles \
 		&& mkdir -p wheels \
