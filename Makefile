@@ -159,7 +159,7 @@ latexmk: docker-up
 		/bin/bash -c "latexmk -f -pdf $(TEX_FILE) && latexmk -c"
 
 mlflow: docker-up mlflow-server
-		printf "%s\n" \
+	@printf "%s\n" \
 			"" \
 			"" \
 			"" \
@@ -283,7 +283,7 @@ snakeviz-server: docker-up
 				--server &"
 
 tensorboard: docker-up tensorboard-server
-		&& printf "%s\n" \
+	@printf "%s\n" \
 			"" \
 			"" \
 			"" \
