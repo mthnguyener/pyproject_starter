@@ -172,3 +172,12 @@ make snakeviz PROFILE_PY=script.py
 1. Run profiler
     - `%memit enter_code_here`
 
+## Acknowledgements
+If you find this project helpful in your work and decide to mention or reference 
+it in your own project, I'd appreciate it! You can acknowledge this project by 
+mentioning my username and providing a link back to this repository.
+
+```
+This project was inspired by or built upon pyproject_microservices by mthnguyener, 
+available at https://github.com/mthnguyener/pyproject_microservices.git.
+```
