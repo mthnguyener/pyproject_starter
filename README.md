@@ -175,9 +175,9 @@ make snakeviz PROFILE_PY=script.py
 ## Acknowledgements
 If you find this project helpful in your work and decide to mention or reference 
 it in your own project, I'd appreciate it! You can acknowledge this project by 
-mentioning my username and providing a link back to this repository.
+mentioning my username and providing a link back to this repository. Here's an example:
 
 ```
-This project was inspired by or built upon pyproject_microservices by mthnguyener, 
-available at https://github.com/mthnguyener/pyproject_microservices.git.
+This project was inspired by or built upon pyproject_starter by mthnguyener, 
+available at https://github.com/mthnguyener/pyproject_starter.git.
 ```
