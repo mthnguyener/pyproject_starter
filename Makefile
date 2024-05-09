@@ -1,6 +1,9 @@
 PROJECT=pyproject_starter
 
-$(shell scripts/create_usr_vars.sh)
+ifeq ($(wildcard docker/.env),)
+    $(shell scripts/create_usr_vars.sh)
+endif
+
 ifeq (, $(wildcard docker/.env))
         $(shell ln -s ../usr_vars docker/.env)
 endif
